@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+body{
+    background-color: rgb(148, 148, 129);
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+h1{
+    margin: 30px;
+    
+}
+.time, p{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    border: 4px solid #888;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0px;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.caixa{
+    background-color: rgb(194, 226, 194);
+    border: 4px solid rgb(16, 77, 16);
+    border-radius: 15px;
+    width: 300px;
+    height: 730px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+.time:hover{
+    border-color: #f00;
+    background-color: rgb(204, 201, 201);
+    border: 4px solid rgb(30, 92, 30);
+    color: black;
+}
+.c1{
+    background-color: #444;
+    color: #ccc;
+   
+}
+.c2{
+    background-color: #ccc;
+    color: #444;
+}
+.destaque{
+    background-color: #804949 !important;
+    color: rgb(231, 202, 202) !important;
+    border-color: #f00 !important;
+}
+.selecionado{
+    background-color: rgb(69, 109, 69) !important;
+    color: white;
+    border: 4px solid white;
+}
+button{
+   background-color: rgb(158, 158, 158); 
+   width: 90px;
+   height: 40px;
+   border: 4px solid rgb(71, 71, 71);
+   border-radius: 10px;
+   cursor: pointer;
+}
+.lix{
+    width: 25px;
+    cursor: pointer;
+
+}
+
+    </style>
+</head>
+<body>
+    <h1>Removendo Times</h1>
+    <main>
+        <div id="caixa1" class="caixa"></div>
+    </main>
+   <script>
+        const caixa1 = document.querySelector('#caixa1')
+        const DivTimes = [...document.querySelectorAll('.times')]
+        // const Divtimes = [...document.querySelectorAll('.time')]
+
+        const timesTodos = ['Flamengo','Palmeiras','Fluminense','São Paulo','Botafogo','Crintians','vasco','santos']
+        timesTodos.map((upu,pos)=>{
+        const caixa1 = document.querySelector('#caixa1')
+        const lixeira = document.createElement('img')
+        const times = document.createElement('div')
+        times.setAttribute('id','t1')
+        times.setAttribute('class','time c1')
+        lixeira.setAttribute('src','imagem/lixeira.png')
+        lixeira.setAttribute('class','lix')
+        times.innerHTML = upu  
+        times.addEventListener('click',(evt)=>{
+         caixa1.removeChild(evt.target.parentNode)
+        })
+        caixa1.appendChild(times)
+        times.appendChild(lixeira)
+    })
+
+ 
+  
+    
+
+   
+
+   </script>
+</body>
+</html>
